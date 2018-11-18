@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Teacher's Book</title>
+</head>
+<body>
+    <section class="loginPage" id="loginPage">
+        <div class="loginPage__form">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <div class="loginPage__form__email" id="loginEmailCont">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" name="" id="loginEmail" placeholder="Enter Email" autofocus>                
+            </div>
+            <div class="loginPage__form__password" id="loginPassCont">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" name="" id="loginPassword" placeholder="Enter PassWord">
+            </div>
+            <button class="btn actionBtn" id="loginBtn">LOGIN</button>
+            <div class="loginErrorOutput" id="loginErrorOutput">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                <span id="warningInfo"></span>
+            </div>
+        </div><!--loginPage__form-->
+    </section><!--loginPage-->
+    <header class="mainHeader">
+        <div class="container">
+            <div class="mainHeader__navBar" id="topMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div><!--mainHeader__navBar-->
+            <h3 class="mainHeader__heading" id="mainHeading">Subjects</h3>
+            <h3 class="mainHeader__subjectName" id="subjectNameHeading"></h3>
+            <span class="mainHeader__teacherName" id="teacherName">
+                
+            </span><!--mainHeader__teacherName-->
+            <div class="mainHeader__logout" id="logout">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </div><!--mainHeader__logout-->
+        </div><!--container-->
+    </header><!--mainHeader-->
+    <main class="mainContent">
+        <section class="mainContent__subjects" id="subjectsPage">
+            <div class="container" id="subjectBoxCont">            
+                <!--Subjects will load here!-->
+                <div class="mainContent__subjects__box mainContent__subjects__box--newSubject" id="newSubjectBtn">
+                    <i class="fa fa-times crossIcons" aria-hidden="true"></i>
+                    <div class="mainContent__subjects__box__subjectName">
+                        <span>New Subject</span>
+                    </div>
+                </div><!--mainContent__subjects__box-->            
+            </div><!--container-->
+            <section class="mainContent__subjects__newSubject fullScreenBg" id="newSubjectPage">
+                    <div class="popupBox popupBox--newSubject">
+                        <h3 class="popupBox__heading">New Subject</h3>
+                        <div>
+                            <label class="label">Name</label>
+                            <input class="popupBox__input popupBox__input--newObject" type="text" name="" id="newSubjectInput" data-output="newSubjectChar" data-maxChar="17" placeholder="Enter Subject" autofocus>
+                        </div>
+                        <div class="popupBox__charLeft"><span id="newSubjectChar">17</span> characters left</div>
+                        <button class="btn cancelBtn" id="newSubjectCancelBtn">Cancel</button>
+                        <button class="btn actionBtn" id="newSubjectAddBtn">Add</button>
+                    </div><!--popupBox-newSubject-->
+            </section><!--mainContent__subjects__newSubject-->
+            <section class="mainContent__subjects__editSubject fullScreenBg" id="editSubjectPage">
+                <div class="popupBox popupBox--editSubject">
+                        <h3 class="popupBox__heading">Edit Subject</h3>
+                        <div>
+                            <label class="label">Name</label>
+                            <input class="popupBox__input popupBox__input--editSubject" type="text" name="" id="editSubjectPageInput" autofocus>
+                        </div>
+                        <div class="popupBox__charLeft"><span>38</span> characters left</div>
+                        <button class="btn cancelBtn">Cancel</button>
+                        <button class="btn actionBtn">Save</button>
+                    </div><!--popupBox-newSubject-->
+            </section><!--mainContent__subjects__editSubject-->   
+            <section class="mainContent__subjects__deleteSubject fullScreenBg" id="deleteSubjectPage">
+                <div class="popupBox popupBox--deleteSubject">
+                        <h3 class="popupBox__heading popupBox__heading--delete">Are you share you want to delete 
+                           <br><strong><span id="deleteSubjectName"></span>?</strong>
+                        </h3>
+                        <div>                            
+                            <input class="hideInput agreeInput" type="checkbox" name="" id="agreeDeleteSubject">
+                            <label class="agreeDeleteSubject" for="agreeDeleteSubject" id="agreeDeleteSubjectLabel"><i class="fa fa-check" aria-hidden="true"></i></label>
+                            <span class="agreeTxt">I understand that this can’t be undone</span>
+                        </div>
+                        <button class="btn cancelBtn">Cancel</button>
+                        <button class="btn actionBtn">Delete</button>
+                    </div><!--popupBox-newSubject-->
+            </section><!--mainContent__subjects__editSubject-->             
+        </section><!--mainContent__subjects-->
+
+        <section class="mainContent__students" id="studentsPage">
+            <div class="container">
+                <table class="mainContent__students__leftTable" id="leftTable">
+                    <tbody id="studentsListTbody">
+                    <tr id="studentsListTableHeading">
+                        <th><i class="fa fa-database" aria-hidden="true"></i></th>
+                        <th><i class="fa fa-users" aria-hidden="true"></i></th>
+                    </tr>  
+                    <!-- Here will be generated code by javascript -->
+                    <tr id="studentsListLastTr">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table><!--mainContent__students__leftTable-->
+
+                <section class="middleTableCon">
+                    <div class="middleTableCon__infoBanner"></div>
+                    <table class="mainContent__students__middleTable" id="middleTableScores">
+                        <tbody id="middleTableTbodyScores"></tbody>                
+                    </table><!--mainContent__students__middleTable-->
+                </section><!--middleTableCon-->
+
+                <table class="mainContent__students__rightTable" id="rightTable">
+                    <tbody id="editRemoveTableTbody">
+                        <tr>
+                            <th>
+                                <button class="exportBtn" id="newDayBtn" title="Insert Cell">
+                                    <i class="fa fa-table" aria-hidden="true"></i>
+                                    <span><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+                                </button>
+                                <button class="exportBtn" id="removeDayBtn" title="Remove Cell">
+                                    <i class="fa fa-table" aria-hidden="true"></i> 
+                                    <span><i class="fa fa-minus-circle" aria-hidden="true"></i></span>
+                                </button>
+                                <button class="newBtn" id="newStudentBtn" title="Add New Student">
+                                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                    <span>New</span>
+                                </button>
+                            </th>
+                        </tr>
+                        <!--  -->
+                        
+                        <!--  -->
+                        <tr id="editRemoveTableLastTr">
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table><!--mainContent__students__rightTable-->                    
+            </div><!--container-->
+            <section class="mainContent__students__newStudent fullScreenBg" id="newStudentPage">
+                <div class="popupBox popupBox--newStudent" id="newStudentPopupBox">
+                    <h3 class="popupBox__heading">New Student</h3>
+                    <input class="popupBox__input popupBox__input--newFirstname" type="text" name="" id="newStudentFirstname" placeholder="First Name" autofocus="">
+                    <input class="popupBox__input popupBox__input--newLasttname" type="text" name="" id="newStudentLastname" placeholder="Last Name">
+                    <div class="inputsCont">
+                        <input class="popupBox__input popupBox__input--newPersonalN" type="text" name="" id="newStudentPersonalN" placeholder="Personal N">
+                        <input class="popupBox__input popupBox__input--newBirthdate" type="text" name="" id="newStudentBirthdate" placeholder="DD / MM /YY">
+                    </div><!--inputsCont-->                  
+                    <input class="popupBox__input popupBox__input--newEmail" type="text" name="" id="newStudentEmail" placeholder="Email">
+                    <div class="inputsCont">
+                        <div class="genderInputsCont">
+                            <input type="radio" name="gender" value="male" class="newMale" id="newMale">
+                            <label for="newMale">Male</label>
+                            <input type="radio" name="gender" value="female" class="newFemale" id="newFemale">
+                            <label for="newFemale">Female</label>
+                        </div><!--genderInputsCont-->
+                        <input class="popupBox__input popupBox__input--newPhone" type="text" name="" id="newStudentPhone" placeholder="Phone">
+                    </div><!--inputsCont-->
+                    <input class="popupBox__input popupBox__input--newAddress" type="text" name="" id="newStudentAddress" placeholder="Address">
+                    <div class="inputsCont">
+                        <button class="btn cancelBtn" id="hideNewStudentPageBtn">Cancel</button>
+                        <button class="btn actionBtn" id="addNewStudentBtn">Add</button>
+                    </div><!--inputsCont-->
+                </div><!--popupBox-newStudent-->
+            </section><!--mainContent__students__newStudent-->
+            <section class="mainContent__students__editStudent fullScreenBg" id="editStudentPage">
+                <div class="popupBox popupBox--editStudent" id="editStudentPopupBox">
+                    <h3 class="popupBox__heading">Edit Student</h3>
+                    <input class="popupBox__input popupBox__input--editFirstname" type="text" name="" id="editFirstnameInput" placeholder="First Name" autofocus="" value="Irakli">
+                    <input class="popupBox__input popupBox__input--editLasttname" type="text" name="" id="editLastnameInput" placeholder="Last Name" value="Iakobishvili">
+                    <div class="inputsCont">
+                        <input class="popupBox__input popupBox__input--editPersonalN" type="text" name="" id="editPersonalNInput" placeholder="Personal N" value="20009807645">
+                        <input class="popupBox__input popupBox__input--editBirthdate" type="text" name="" id="editBirthdateInput" placeholder="DD / MM /YY" value="16 / 05 / 92">
+                    </div><!--inputsCont-->                  
+                    <input class="popupBox__input popupBox__input--newEmail" type="text" name="" id="editEmailInput" placeholder="Email" value="irakli.iakobishvili@gmail.com">
+                    <div class="inputsCont">
+                        <div class="genderInputsCont">
+                            <input type="radio" name="gender" value="male" class="editMale" id="editMale" checked>
+                            <label for="editMale">Male</label>
+                            <input type="radio" name="gender" value="female" class="editFemale" id="editFemale">
+                            <label for="editFemale">Female</label>
+                        </div><!--genderInputsCont-->
+                        <input class="popupBox__input popupBox__input--editPhone" type="text" name="" id="editPhoneInput" placeholder="Phone" value="598-16-05-92">
+                    </div><!--inputsCont-->
+                    <input class="popupBox__input popupBox__input--editAddress" type="text" name="" id="editAddressInput" placeholder="Address" value="Tsereteli Street #78">
+                    <div class="inputsCont">
+                        <button class="btn cancelBtn" id="hideEditStudentPageBtn">Cancel</button>
+                        <button class="btn actionBtn" id="saveEditedStudentBtn">Save</button>
+                    </div><!--inputsCont-->
+                </div><!--popupBox-editStudent-->
+            </section><!--mainContent__students__editStudent-->
+            <section class="mainContent__students__deleteStudent fullScreenBg" id="deleteStudentPage">
+                    <div class="popupBox popupBox--deleteStudent">
+                        <h3 class="popupBox__heading popupBox__heading--delete">Are you share you want to delete 
+                            <br><strong><span id="deleteStudentFullName">Irakli Iakobishvili</span>?</strong>
+                        </h3>
+                        <div class="agreeToDeleteStudentCont">                            
+                            <input class="hideInput agreeInput" type="checkbox" name="" id="agreeDeleteStudent">
+                            <label class="agreeDeleteSubject" for="agreeDeleteStudent" id="studentDelLabel"><i class="fa fa-check" aria-hidden="true"></i></label>
+                            <span class="agreeTxt">I understand that this can’t be undone</span>
+                        </div>
+                        <div class="inputsCont">
+                            <button class="btn cancelBtn" id="hideDelStudentPageBtn">Cancel</button>
+                            <button class="btn actionBtn" id="deleteStudentBtn">Delete</button>
+                        </div><!--inputsCont-->
+                    </div><!--popupBox popupBox-deleteStudent-->                
+            </section><!--mainContent__students__deleteStudent-->
+
+            <section class="mainContent__subjects__editStudentScore fullScreenBg" id="editStudentScoreSect">
+                <div class="popupBox popupBox--editStudentScore">
+                        <h3 class="popupBox__heading" id="scoreHeading">Edit Score</h3>
+                        <div>
+                            <label class="label">Score</label>
+                            <input class="popupBox__input popupBox__input--editStudentScore" type="text" name="" id="editScoreInput" autofocus>
+                        </div>
+                        <div class="editScoreBtns">
+                            <button class="btn cancelBtn" id="closeEditScoreBtn">Cancel</button>
+                            <button class="btn actionBtn" id="saveChangedScoreBtn">Save</button>
+                        </div>
+                    </div><!--popupBox-editStudentScore-->
+            </section><!--mainContent__subjects__editStudentScore--> 
+
+        </section><!--mainContent__students-->
+        <section class="mainContent__fullscreenMenu" id="fullScreenMenuPage">          
+            <ul class="fullscreenMenu__list" id="fullscreenMenuList">
+                <li class="fullscreenMenu__list__item fullscreenMenu__list__item--subjects" id="openSubjectPageItem">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <h3>Subjects</h3>
+                </li>
+                <li class="fullscreenMenu__list__item fullscreenMenu__list__item--settings" id="settingsBtn">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <h3>Settings</h3>
+                </li>
+                <li class="fullscreenMenu__list__item fullscreenMenu__list__item--teacherGuide" id="statisticBtn">
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    <h3>Statistic</h3>
+                </li>
+                <li class="fullscreenMenu__list__item fullscreenMenu__list__item--support">
+                    <i class="fa fa-skype" aria-hidden="true"></i>
+                    <h3>Support</h3>
+                    <a class="supportLink" href="skype:irakli.iakobishvili_1?call"></a>
+                </li>
+            </ul><!--fullscreenMenu__list-->
+        </section><!--mainContent__fullscreenMenu-->
+        <section class="mainContent__settings"id="settingsPage">
+            <div class="popupBox--settings">
+                <button class="closeSettingsBtn" id="closeSettingsPageBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="reset_email">
+                    <h3 class="popupBox__heading">Email</h3>
+                    <input class="popupBox__input popupBox__input--currentEmail" id="currentEmailInput" type="text" name="" id="" placeholder="Current Email">
+                    <input class="popupBox__input popupBox__input--enterNewEmail" id="newEmailInput" type="text" name="" id="" placeholder="New Email" autofocus>
+                    <input class="popupBox__input popupBox__input--confirmNewEmail" id="confirmEmailInput" type="text" name="" id="" placeholder="Confirm Email">
+                    <div class="subscribeNewProductsCont">                            
+                        <input class="hideInput agreeInput" type="checkbox" name="" id="subscribe" checked>
+                        <label class="agreeDeleteSubject" for="subscribe"><i class="fa fa-check" aria-hidden="true"></i></label>
+                        <span class="agreeTxt">Subscribe to stay updated with new <br> products and services!</span>
+                    </div>
+                    <button class="btn actionBtn" id="changeEmailBtn">Change Email</button>
+                </div><!--reset_email-->
+                <div class="reset_password">
+                    <h3 class="popupBox__heading">Password</h3>
+                    <input class="popupBox__input popupBox__input--currentPassword" id="currentPasswordInput" type="password" name="" id="" placeholder="Current Password">
+                    <input class="popupBox__input popupBox__input--enterNewPassword" id="newPasswordInput" type="password" name="" id="" placeholder="New Password">
+                    <input class="popupBox__input popupBox__input--confirmNewPassword" id="confirmNewPassInput" type="password" name="" id="" placeholder="Confirm Password">
+                    <div class="passwordStrengthShowerCont">
+                        <div class="passSlider" id="passwordStrengthViewer">
+
+                        </div>
+                        <div class="passInfo">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <span id="passwordStrengthTxt">Strength</span>
+                        </div>
+                    </div><!--passwordStrengthShowerCont-->
+                    <button class="btn actionBtn" id="changePasswordBtn">Change Password</button>
+                </div><!--reset_password-->
+            </div><!--popupBox-settings-->
+        </section><!--mainContent__settings-->
+        <section class="mainContent__statistic" id="statisticPage">
+            <div class="mainContent__statistic_container">
+                <table class="mainContent__statistic__table">
+                    <tr>
+                        <td>Total Student:</td>
+                        <td>
+                            <div>
+                                <span id="totalStudent"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Average Age:</td>
+                        <td>
+                            <div>
+                                <span id="averageAge"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Average Score:</td>
+                        <td>
+                            <div>
+                                <span id="averageScore"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Male:</td>
+                        <td>
+                            <div>
+                                <span id="totalMale"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Female:</td>
+                        <td>
+                            <div>
+                                <span id="totalFemale"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Missed Lessons:</td>
+                        <td>
+                            <div>
+                                <span id="missedLessons"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table><!--mainContent__statistic__table-->
+                <i class="fa fa-bar-chart statisticIcon" aria-hidden="true"></i>
+            </div><!--mainContent__statistic_container-->
+        </section><!--mainContent__statistic-->
+    </main><!--mainContent-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

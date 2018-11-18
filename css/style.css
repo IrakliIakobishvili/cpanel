@@ -1,0 +1,1190 @@
+/*---------------------- Roboto Font --------------------*/
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+        url('fonts/roboto/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+        url('fonts/roboto/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+        url('fonts/roboto/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+/*-------------------- End Roboto Font ------------------*/
+
+body,div,section,article,ul,li,h1,h2,h3,p,input,button, table, tr, th, td {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    font-weight: normal;
+    font-style: normal;
+    outline: none;
+    position: relative;
+}
+
+:root {
+    --main-bg-color: #3b6fc8; 
+    --main-btn-color: red;
+    --edit-btn-color: #5cb331;
+    --remove-btn-color: #b73a31;
+    --popup-border-color: #1c52b0;
+}
+
+/*------------------- Login Page ----------------------*/
+.loginPage {
+    background: #386dcb;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.loginPage__form {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fa-graduation-cap {
+    font-size: 70px;
+    color: #fff; 
+    margin-bottom: 50px;
+}
+.fa-lock {
+    margin-top: 2px;
+}
+.loginPage__form__email, 
+.loginPage__form__password {
+    width: 280px;
+    height: 36px;
+    border-radius: 3px;
+    border: 2px solid #1c52b0;
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+}
+.loginPage__form__email i, 
+.loginPage__form__password i {
+    color: #00A7AE;
+    font-size: 18px;
+    margin-right: 5px;
+}
+.loginPage__form__email input, 
+.loginPage__form__password input {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.loginPage__form .btn {
+    width: 280px;
+    height: 36px;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2a2a2a;
+    line-height: 39px;
+}
+
+body {
+    padding-top: 60px;
+}
+.container {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+/*----------------- Main Header ---------------*/
+.mainHeader {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    z-index: 5;
+}
+.mainHeader .container {
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+    position: relative;
+}
+.mainHeader__navBar {
+    margin-right: auto;
+    z-index: 3;
+}
+.mainHeader__heading {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+}
+.mainHeader__subjectName {
+    position: absolute;
+    left: 60px;
+    color: #fff;
+    font-size: 16px;
+    display: none;
+}
+.mainHeader i {
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+.mainHeader__teacherName {
+    color: #fff;
+    margin-right: 23px;
+    text-align: right;
+    font-size: 16px;
+}
+
+/*----------------- Main Content Subjects ---------------*/
+.mainContent__subjects, .mainContent__students, .mainContent__fullScreen {
+    width: 100%;
+    position: absolute;
+}
+.mainContent__subjects .container {
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100vh - 60px);
+}
+.mainContent .container {
+    padding-top: 15px;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.mainContent__subjects {
+    display: block;
+}
+.mainContent__subjects__box {
+    width: 150px;
+    height: 80px;
+    border: 1px solid var(--main-bg-color);
+    border-radius: 3px;
+    padding-top: 10px;
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.mainContent__subjects__box__subjectName {
+    background-color: #3b6fc8;
+    color: #fff;
+    height: 34px;
+    line-height: 37px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainContent__subjects__box span::first-letter {
+    text-transform: uppercase;
+}
+.folderIconsCont {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.folderIconsCont i {
+    color: #f5dc8b;
+    font-size: 15px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.fa-folder-open {
+    display: none;
+}
+.mainContent__subjects__box__subjectName:hover .fa-folder {
+    display: none;
+}
+.mainContent__subjects__box__subjectName:hover .fa-folder-open {
+    display: block;
+}
+.mainContent__subjects__box__editBtn, .mainContent__subjects__box__removeBtn {
+    width: 40px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 3px;
+    outline: none;
+    background: none;
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
+}
+.mainContent__subjects__box__editBtn {
+    color: var(--edit-btn-color);
+    border-color: var(--edit-btn-color);
+    left: 30px;
+}
+.mainContent__subjects__box__editBtn:hover {
+    color: #fff;
+    background-color: var(--edit-btn-color);
+}
+.mainContent__subjects__box__removeBtn {
+    color: var(--remove-btn-color);
+    border-color: var(--remove-btn-color);
+    right: 30px;
+}
+.mainContent__subjects__box__removeBtn:hover {
+    color: #fff;
+    background-color: var(--remove-btn-color);
+}
+.mainContent__subjects__box--newSubject {
+    color: var(--main-bg-color);
+    cursor: pointer;
+}
+.mainContent__subjects__box--newSubject span {
+    color: var(--main-bg-color);
+}
+.mainContent__subjects__box--newSubject:hover {
+    cursor: pointer;
+    background-color: var(--main-bg-color);
+    color: #fff;
+}
+.mainContent__subjects__box--newSubject:hover span {
+    color: #fff;
+}
+.mainContent__subjects__box--newSubject .mainContent__subjects__box__subjectName {
+    background: none;
+    font-weight: 500;
+}
+.crossIcons {
+    transform: rotate(45deg);
+    left: 60px;
+    position: absolute;
+    font-size: 35px;
+}
+/*---------------------- New Subject ----------------------*/
+.fullScreenBg {
+    background-color: rgba(59, 111, 200, 0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    z-index: 20;
+}
+.popupBox {
+    background-color: #fff;
+    border: 2px solid var(--popup-border-color);
+    border-radius: 6px;
+    position: absolute;
+    top: -60px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    padding: 15px 25px;
+}
+.popupBox--newSubject, .popupBox--editSubject, .popupBox--deleteSubject {
+    width: 305px;
+    height: 160px;
+}
+.popupBox--editSubject .popupBox__charLeft {
+    opacity: 0;
+}
+.btn {
+    background: none;
+    outline: none;
+    border-radius: 2px;
+    font-size: 17px;
+    color: #000000;
+    border: none;
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+.btn:active {
+    box-shadow: inset 0px 0px 2px rgb(112, 86, 8) !important;
+}
+
+.actionBtn {
+    background-color: #efb408;
+}
+.cancelBtn {
+    background-color: #ababab;
+}
+.popupBox__heading {
+    color: #2a2a2a;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+.popupBox__heading--delete {
+    font-size: 18px;
+    font-weight: normal;
+}
+.popupBox__input {
+    height: 26px;
+    border: 1px solid #909090;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 6px;
+}
+.label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2a2a2a;
+}
+.popupBox__charLeft {
+    font-size: 10px;
+    color: #707070;
+    text-align: right;
+    padding: 5px 0px 10px 0px;
+}
+.popupBox__input--newObject, .popupBox__input--editSubject, .popupBox__input--deleteSubject {
+    width: 209px;
+}
+.popupBox--newSubject .actionBtn, .popupBox--editSubject .actionBtn , .popupBox--deleteSubject .actionBtn {
+    float: right;
+}
+.actionBtn:hover {
+    background-color: #dda808;
+}
+.cancelBtn:hover {
+    background-color: #9c9c9c;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+.mainContent__subjects__newSubject, .mainContent__subjects__editSubject, .mainContent__subjects__deleteSubject {
+    display: none;
+}
+
+.popupBox--deleteSubject {
+    width: 335px;
+    height: 158px;
+}
+.agreeTxt {
+    font-size: 11px;
+    color: #2a2a2a;
+}
+.agreeDeleteSubject {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    background-color: #3397ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+    border: 1px solid transparent;
+}
+.agreeDeleteSubject i {
+    font-size: 8px;
+    color: #fff;
+    position: relative;
+}
+.popupBox--deleteSubject div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.hideInput {
+    display: none;
+}
+.popupBox.popupBox--deleteSubject .actionBtn {
+    margin-right: 15px;
+}
+.popupBox.popupBox--deleteSubject .cancelBtn {
+    margin-left: 15px;
+}
+
+.popupBox.popupBox--editStudentScore {
+    width: 310px;
+    height: 150px;
+}
+.editScoreBtns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.popupBox__input--editStudentScore {
+    width: 215px;
+}
+.mainContent__subjects__editStudentScore {
+    display: none;
+}
+/*----------------- Main Content Students ---------------*/
+.mainContent__students {
+    display: none;
+}
+.mainContent__students .container {
+    padding-top: 66px;
+    position: relative;
+    background: #fff;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: space-between;
+    border-right: 1px solid #cecece;
+    border-left: 1px solid #cecece;
+}
+.mainContent__students__leftTable,
+.mainContent__students__rightTable,
+.mainContent__students__middleTable {
+    border-collapse: collapse;
+    position: relative;
+    top: 0px;
+}
+.mainContent__students__leftTable tr td, 
+.mainContent__students__leftTable tr th,
+.mainContent__students__rightTable tr td, 
+.mainContent__students__rightTable tr th,
+.mainContent__students__middleTable tr td, 
+.mainContent__students__middleTable tr th {
+    border: 1px solid #cecece;
+}
+.mainContent__students__leftTable tr td,
+.mainContent__students__rightTable tr td {
+    font-size: 14px;
+    width: 180px;
+    background-color: #eeeeee;
+    padding-left: 8px;
+    position: relative;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.mainContent__students__leftTable tr td:first-of-type {
+    text-align: center;
+    padding: 0px;
+    width: 33px;
+    height: 35px;
+    border-left: none;
+}
+.mainContent__students__rightTable tr td:first-of-type {
+    width: 182px;
+    height: 35px;
+    position: relative;
+    left: 0px;
+}
+.mainContent__students__leftTable th:nth-of-type(1),
+.mainContent__students__rightTable th:nth-of-type(1) {
+    height: 67px !important;
+    background-color: #fff;
+    left: 0px;
+    width: 34px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainContent__students__leftTable th:nth-of-type(2) {
+    width: 181px;
+    height: 67px;
+    background-color: #fff;
+    left: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainContent__students__rightTable th:nth-of-type(1) {
+    width: 183px;
+}
+.mainContent__students__leftTable tr:first-child,
+.mainContent__students__rightTable tr:first-child
+{
+    top: -30px;
+    position: fixed;
+    top: 60px;
+    z-index: 5;
+    padding: 0px !important;
+}
+.mainContent__students__leftTable th:nth-of-type(1), 
+.mainContent__students__leftTable th:nth-of-type(2) {
+    background: white;
+    position: absolute;
+    border-left: none;
+}
+
+.mainContent__students__middleTable tr td {
+    position: relative;
+}
+.mainContent__students__middleTable tr td span {
+    color: #fff;
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    top: 0px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.middleTableCon {
+    width: 804px;
+    position: absolute;
+    top: 0px;
+    top: 139px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    left: 32px;
+    overflow: auto;
+    min-height: calc(100vh - 60px);
+    bottom: 0px;
+    top: 0px;
+}
+.middleTableCon__infoBanner {
+    height: 67px;
+    background-color: #eeeeee;
+    line-height: 66px;
+    text-align: center;
+    border-bottom: 1px solid #cecece;
+}
+.mainContent__students__middleTable {
+    background: #fff;
+    position: absolute;
+}
+.mainContent__students__middleTable tr {
+    height: 35px;
+    border: 1px solid #cecece;
+}
+.mainContent__students__middleTable tr td {
+    min-width: 62px !important;
+    min-width: 73px !important;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+}
+.mainContent__students__middleTable tr:first-child {
+    height: 10px !important;
+    padding: 0px !important;
+}
+.mainContent__students__middleTable tr:nth-of-type(1) td {
+    background: #eeeeee;
+    font-size: 10px;
+    padding: 0px 6.4px;
+    height: 31px !important;
+}
+.mainContent__students__leftTable th:nth-of-type(2) {
+    border-left: 1px solid #cecece;
+}
+.mainContent__students__middleTable tr td:first-child {
+    border-left: none;
+}
+.mainContent__students__middleTable tr td:last-child {
+    border-right: none;
+}
+.mainContent__students__rightTable tr td {
+    border-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainContent__students__middleTable tr:first-of-type td {
+    background: #eeeeee;
+}
+.mainContent__students__middleTable tr:nth-of-type(2) {
+    background-color: #eeeeee;
+}
+.scoreInput {
+    width: 100%;
+    text-align: center;
+    outline: none;
+    border: 1px solid #5cb331;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+.tableInputScoreSaverBtn {
+    bottom: 0px;
+    position: absolute;
+    width: 17px;
+    height: 20px;
+    top: 0px;
+    margin: auto;
+    border: none;
+    right: 2px;
+    cursor: pointer;
+    background: none;
+    display: none;
+}
+.scoreInput:disabled {
+    background-color: #fff;
+    color: #2e2e2e;
+}
+.tableInputScoreSaverBtn i {
+    color: #00A7AE;
+    font-size: 16px;
+}
+
+.mainContent__students__leftTable tr:last-child td, 
+.mainContent__students__rightTable tr:last-child td {
+    opacity: 0;
+    border: none;
+}
+
+.editBtn, .deleteBtn {
+    width: 70px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0px 8px 0px 2px;
+}
+.editBtn {
+    border: 1px solid var(--edit-btn-color);
+    color: #5cb331;
+}
+.editBtn:hover {
+    color: #fff;
+    background-color: var(--edit-btn-color);
+}
+.deleteBtn {
+    border: 1px solid var(--remove-btn-color);
+    color: var(--remove-btn-color);
+}
+.deleteBtn:hover {
+    color: #fff;
+    background-color: var(--remove-btn-color);
+}
+.editBtn i,.deleteBtn i {
+    position: relative;
+    left: -3px;
+}
+.exportBtn, .newBtn {
+    width: 69px;
+    height: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid var(--main-bg-color);
+    color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px 0px 6px;
+    cursor: pointer;
+    outline: none;
+}
+.exportBtn {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.exportBtn:hover {
+    background-color: #3b6fc8;
+    color: #fff;
+}
+.newBtn {
+    background-color: var(--main-bg-color);
+    color: #fff;
+}
+.newBtn:hover {
+    background-color: #315ca4;
+}
+.exportBtn i {
+    font-size: 18px;
+}
+.newBtn i {
+    font-size: 20px;
+    transform: rotateZ(45deg);
+}
+
+.popupInfo {
+    position: absolute;
+    width: 252px;
+    height: 155px;
+    border-radius: 6px;
+    border-bottom-left-radius: 0px;
+    background-color: #c6dbff;
+    box-shadow: 2px 0px 2px #bbbcbe;
+    right: -253px;
+    bottom: 0px;
+    z-index: 10;
+    display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.popupInfo::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    left: -11px;
+    bottom: 0px;
+    border-bottom: solid 8px rgb(198, 219, 255);
+    border-right: solid 8px rgb(198, 219, 255);
+    border-left: solid 8px transparent;
+    border-top: solid 8px transparent;
+}
+.mainContent__students__leftTable tr td:hover .popupInfo {
+    display: flex;
+}
+.popupInfo__table tr {
+    height: 10px;
+    position: static !important;
+}
+.popupInfo__table tr td {
+    height: 18px !important;
+    padding: 0px !important;
+    border-collapse: collapse;
+    margin: 0px !important;
+    border: none !important;
+    position: static !important;
+    opacity: 1 !important;
+    font-size: 12px;
+}
+.scoreGrade {
+    position: relative !important;
+}
+.scoreGrade > div {
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 85px;
+}
+.popupInfo__table tr td:first-child {
+    text-align: right;
+    padding-right: 5px !important;
+    color: var(--main-bg-color);
+    position: relative !important;
+}
+.scoreGrade div:nth-child(1) {
+    left: 1px;
+}
+.scoreGrade div:nth-child(2) {
+    left: 128px;
+}
+.scoreGrade div:nth-child(3) {
+    left: 185px;
+}
+.totalScore, .finalGrade, .totalAbsent {
+    background-color: #00a7ae;
+    width: 45px;
+    height: 20px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 15px;
+}
+.finalGrade {
+    background-color: green;
+}
+.totalAbsent {
+    background-color: red;
+}
+.totalScore {
+    margin-left: 4px;
+}
+.scoresTr {
+    height: 25px !important;
+    line-height: 25px !important;
+}
+.popupInfo__table tr td {
+    background-color: transparent !important;
+}
+
+/*--------------------- New Student -----------------------*/
+.mainContent__students__newStudent, 
+.mainContent__students__editStudent, 
+.mainContent__students__deleteStudent {
+    display: none;
+}
+.popupBox--newStudent, 
+.popupBox--editStudent {
+    width: 305px;
+    height: 320px;
+}
+.popupBox--deleteStudent {
+    width: 325px;
+    height: 165px;
+}
+.agreeToDeleteStudentCont {
+    display: flex;
+    width: 250px;
+    margin: auto;
+} 
+.popupBox--deleteStudent .inputsCont {
+    margin: auto;
+    margin-top: 15px;
+}
+.popupBox__input--newFirstname,
+.popupBox__input--newLasttname,
+.popupBox__input--newEmail, 
+.popupBox__input--newAddress,
+.popupBox__input--editFirstname,
+.popupBox__input--editLasttname,
+.popupBox__input--editEmail, 
+.popupBox__input--editAddress {
+    width: 250px;
+}
+.popupBox__input--newPersonalN,
+.popupBox__input--newBirthdate,
+.popupBox__input--newPhone,
+.popupBox__input--editPersonalN,
+.popupBox__input--editBirthdate,
+.popupBox__input--editPhone {
+    width: 120px;   
+}
+.inputsCont {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+.genderInputsCont {
+    width: 120px;
+    border: 1px solid #909090;
+    font-size: 12px;
+    position: relative;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 3px;
+}
+.genderInputsCont::before {
+    content: "";
+    display: block;
+    height: 15px;
+    width: 1px;
+    background-color: #d4d4d4;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+.genderInputsCont input {
+    position: absolute;
+    display: none;
+}
+.genderInputsCont label {
+    height: 100%;
+    width: 50%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;   
+    border-radius: 2px;   
+    color: #2a2a2a;   
+    cursor: pointer;
+}
+.newMale:checked + label,
+.newFemale:checked + label,
+.editMale:checked + label,
+.editFemale:checked + label {
+    background-color: #00a7ae;
+    color: #fff;
+}
+.popupBox--newStudent input, 
+.popupBox--editStudent input {
+    margin-bottom: 8px;
+}
+
+.hideInput + label i {
+    display: none;
+}
+.agreeInput:checked + label i {
+    display: block;
+}
+
+/*-------------------- Full Screen Menu ---------------------*/
+.mainContent__fullscreenMenu, .mainContent__settings {
+    position: fixed;
+    background-color: rgba(59, 111, 200, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    display: none;
+}
+.fullscreenMenu__list {
+    width: 380px;
+    height: 380px;
+    top: -60px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.fullscreenMenu__list__item {
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-bg-color);
+    cursor: pointer;
+    position: relative;
+}
+.supportLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.fullscreenMenu__list__item i {
+    font-size: 50px;
+}
+.fullscreenMenu__list__item h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 14px;
+}
+.fullscreenMenu__list__item:hover {
+    color: #fff;
+    background-color: var(--main-bg-color);
+}
+
+/*----------------------- Settings --------------------------*/
+.popupBox--settings {
+    background-color: #fff;
+    border: 2px solid var(--popup-border-color);
+    border-radius: 6px;
+    position: absolute;
+    top: -60px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    padding: 15px 25px;
+    width: 490px;
+    height: 260px;
+    display: flex;
+    justify-content: space-between;
+}
+.reset_email, .reset_password {
+    width: 50%;
+}
+.reset_email {
+    padding-right: 10px;
+}
+.reset_password {
+    padding-left: 10px;
+}
+.popupBox--settings input {
+    width: 100%;
+    margin-bottom: 6px;
+}
+.popupBox--settings button {
+    width: 100%;
+    margin-top: 25px;
+}
+.subscribeNewProductsCont {
+    display: flex;
+    width: 215px;
+}
+
+#passwordStrengthViewer {
+    width: 208px;
+    height: 6px;
+    background-image: url("../images/passwordStrengthChecker.png");
+    background-repeat: no-repeat;
+}
+.passInfo {
+    margin-top: 3px;
+}
+.passInfo span {
+    font-size: 11px;
+    color: #2a2a2a;
+}
+.passInfo i {
+    font-size: 15px;
+    color: var(--main-bg-color);
+}
+.reset_password .actionBtn {
+    margin-top: 23px;
+}
+
+.redBorder {
+    border-color: #ff0000 !important;
+}
+.displayBlock {
+    display: block;
+}
+
+.loginErrorOutput {
+    position: absolute;
+    width: 275px;
+    height: 50px;
+    left: 12px;
+    bottom: -18px;
+    font-size: 12px;
+    text-align: left;
+    color: white;
+    opacity: 0;
+    transition-duration: 1s;
+}
+.loginErrorOutput i {
+    color: #ff0000;
+    color: #fff;
+    margin-right: 3px;
+}
+.closeSettingsBtn {
+    position: absolute;
+    width: 40px !important;
+    height: 40px;
+    outline: none;
+    background-color: #fff;
+    border: 2px solid var(--popup-border-color);
+    border-radius: 50%;
+    top: -45px;
+    right: -20px;
+    cursor: pointer;
+}
+.closeSettingsBtn i {
+    font-size: 20px;
+    color: var(--popup-border-color);
+}
+
+/*---------------- Statistic ----------------*/
+.mainContent__statistic {
+    background: #fff;
+    height: calc(100vh - 60px);
+    position: relative;
+    width: 100%;
+    display: none;
+    z-index: 15;
+}
+.mainContent__statistic__table {
+    width: 230px;
+    margin: auto;
+    font-size: 15px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.mainContent__statistic__table tr td:last-child {
+    height: 50px;
+    width: 50px;
+}
+.mainContent__statistic__table tr td:first-child {
+    text-align: right;
+    padding-right: 10px;
+}
+.mainContent__statistic__table tr td:last-child > div {
+    background-color: #3397FF;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}
+.mainContent__statistic__table tr:nth-of-type(2) td > div {
+    background-color: #bc773a;
+}
+.mainContent__statistic__table tr:nth-of-type(3) td > div {
+    background-color: orange;
+}
+.mainContent__statistic__table tr:nth-of-type(4) td > div {
+    background-color: #009688;
+    background-color: #008a4e;
+}
+.mainContent__statistic__table tr:nth-of-type(5) td > div {
+    background-color: #f33c8c;
+}
+.mainContent__statistic__table tr:nth-of-type(6) td > div {
+    background-color: green;
+}
+.mainContent__statistic_container {
+    width: 676px;
+    position: relative;
+    height: 330px;
+    top: 150px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+.statisticIcon {
+    position: absolute;
+    font-size: 348px;
+    color: #3b6fc8;
+    right: 0px;
+    top: -16px;
+    bottom: 0px;
+    margin: auto;
+}
+.n0 {
+    background-position-y: 0px;
+}
+.n1 {
+    background-position-y: -10px;
+}
+.n2 {
+    background-position-y: -20px;
+}
+.n3 {
+    background-position-y: -30px;
+}
+.n4 {
+    background-position-y: -40px;
+}
+.n5 {
+    background-position-y: -50px;
+}
+.n6 {
+    background-position-y: -60px;
+}
+.n7 {
+    background-position-y: -70px;
+}
+.n8 {
+    background-position-y: -80px;
+}
+.n9 {
+    background-position-y: -90px;
+}
+.n10 {
+    background-position-y: -100px;
+}
+.n11 {
+    background-position-y: -110px;
+}
+.n12 {
+    background-position-y: -120px;
+}
